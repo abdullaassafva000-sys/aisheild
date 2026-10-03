@@ -238,7 +238,7 @@ elif app_mode == "3. NewsGuard (Fake News Detector)":
   )
 
   if st.button("Verify Narrative"):
-    if len(news_text.strip() < 10):
+    if not news_text or len(news_text.strip()) < 10 :
       st.warning("Please enter a valid text snippet.")
     else:
       with st.spinner("Cross-referencing trusted global press databases..."):
